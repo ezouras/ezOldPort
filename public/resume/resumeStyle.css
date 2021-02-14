@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css?family=Molengo');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200');
+
+
+/** high level containers ***/
+
+  body{
+  box-sizing: border-box;
+  height:100%;
+  width:100%;
+  margin:0;
+  display: flex;  /*enables flex content for its children*/
+  flex-direction: column;
+  font-family: 'Molengo', sans-serif;
+  background: #FDFDF8;
+}
+.thinFont{
+  font-family: 'Work Sans', sans-serif;
+}
+
+
+.mainContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  width:100%;
+  height:80%;
+}
+
+
+/**** main resume body ****/
+.mainBody{
+  height:100%;
+}
+
+.mainBody-profile{
+  height: 10%;
+  margin-bottom:1rem;
+}
+.mainBody-Experiences{
+  height:90%;
+}
+.mainTitle{
+  height: 10%;
+  margin-bottom:1rem;
+  font-size:2rem;
+  color:#977c97;
+}
+
+.jobexperience-container{
+  height:90%;
+}
+
+.jobExperience{
+    margin-bottom:2rem;
+}
+#full-stack{
+  height:25%;
+}
+
+#compliance-engineer{
+  height:25%;
+}
+#configuration-administration{
+  height:25%;
+}
+#developer{
+  height:25%;
+}
+
+.experiences-jobNameDate{
+  font-size:1rem;
+  display:flex;
+  justify-content: space-between;
+  color:#977c97;
+  margin:.5rem 0;
+}
+
+/** side bar **/
+.side-bar{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width:30%;
+  color:#fcfcf5;
+}
+
+.side-bar-top{
+  padding-top:2rem;
+  background-color: #4c324c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:30%;
+  padding-left:1rem;
+  padding-right:1rem;
+}
+
+.pictureContainer{
+  margin-top: .5rem;
+  height:50%;
+  width:30%;
+
+}
+
+.picture{
+  padding-top:1rem;
+  border-radius: 60%;
+  height:60%;
+  background-image:url(./asetts/EvieId.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+
+}
+
+
+.side-bar-top-name{
+  height:25%;
+    font-size: 2rem;
+    text-align: center;
+}
+.side-bar-top-title{
+  height:25%;
+  margin-top: -1rem;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.side-bar-bottom{
+  height:70%;
+  background-color:#d8b2d8;
+  padding:1rem 1rem;
+  padding-bottom:2rem;
+}
+.side-bar-bottom-contactInfo{
+    margin-top:2rem;
+}
+.menu-item:first-child{
+  margin-top:1rem;
+}
+.menu-item{
+  color:#816f81;
+  margin-bottom:1rem;
+}
+.menu-item a{
+  text-decoration: none;
+  color:#816f81;
+}
+.menu-item a:hover{
+  transition:all .5s;
+  color:#330033;
+}
+.menu-item:last-child{
+  margin-bottom:2rem;
+}
+i{
+  margin-right:.5rem;
+}
+.side-bar-botom-education{
+  color:#5d465d;
+}
+
+.side-bar-sectionTitle{
+  margin-bottom: .75rem;
+  font-size: 1.2rem;
+  font-weight:bold;
+}
+
+.school{
+  margin-top:.5rem;
+}
+
+
+.mainBody{
+  color:#342b34;
+  background: #FDFDF8;
+  padding-top: 2rem;
+  width:70%;
+  height:100%;
+  padding-right:2rem;
+  padding-left:2rem;
+  padding-bottom:1rem;
+}
+/**** footer *****/
+.main-menuBar {
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Molengo', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: .2rem;
+}
+  .main-menu-item{
+    text-align: center;
+    vertical-align: middle;
+    width:50%;
+    height:100%;
+    text-decoration: none;
+    margin:0;
+  }
+  .main-menu-item div{
+    height:100%;
+    padding-top:.5rem;
+  }
+
+  .main-menu-item a{
+    text-decoration: none;
+  }
+.main-menu-item{
+  border: 1px solid #FDFDF8;
+}
+
+#portfolio{
+  background: #816f81;
+  color:#FDFDF8;
+}
+#home{
+  background:#816f81;
+  color:#FDFDF8;
+}
+/*******   media queries ******/
+/* Portrait and Landscape */
+/*@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+html{
+  height:100%;
+}
+
+body{
+  position:relative;
+}
+.mainContainer{
+  height:100%;
+}
+  .main-menuBar {
+    position:fixed;
+    bottom:0;
+    height:2rem;
+  }
+
+}
+*/
+
+
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 315px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+      .mainContainer{
+        flex-direction:column;
+        margin-bottom: 3rem;
+      }
+      .side-bar {
+        width:100%;
+      }
+      .pictureContainer{
+          display: none;
+      }
+      .side-bar-top {
+        height: 6rem;
+      }
+      .side-bar-bottom{
+            font-size: 1.4rem;
+            background-color: #816a81;
+      }
+      .side-bar-top-title {
+      margin-top: 1rem;
+    }
+    .main-menuBar{
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    height:4rem;
+    }
+    .main-menu-item{
+    width: 100%;
+    }
+    .menu-item{
+        color:#fcfcf5;
+    }
+    .menu-item a{
+        color:#fcfcf5;
+    }
+    .side-bar-botom-education {
+    color:#fcfcf5;
+  }
+
+}

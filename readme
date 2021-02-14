@@ -1,0 +1,12 @@
+1/ Decided to create the SVG circles using
+javascript.  this allows me to
+tinker with the size of the circles and the number
+of the circles depending on the window size.
+
+2/ animations were to tedious.  each cricle
+needed to go thru an animation and instead of creating
+a new animation for each circle
+I decided to use Sass to help wiht the
+funtionality:
+sass --watch input.scss style.css
+sass input.scss style.css

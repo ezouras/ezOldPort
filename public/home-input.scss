@@ -1,0 +1,166 @@
+// Utilities
+@import "./utilities/variables";
+@import "./utilities/global-style";
+$id:1;
+$numberOfCircles: 10;
+$circleId:$numberOfCircles;
+$radiusSmallest:40;
+$radiusIncrease:30;
+$titleColor:#FF1D8E;
+
+@mixin rotateReverse($animationName,$strokeEnd){
+  	@keyframes rotateReverse#{$animationName}{
+  		from{stroke-dashoffset:0;}
+      to{stroke-dashoffset: -$strokeEnd;}
+  	}
+}
+
+/////******** top level containers *********/
+.container{
+  height:100vh;
+}
+.titleContainer{
+  height:15vh;
+  color:$titleColor;
+}
+.circleContainer{
+  height:75vh;
+  /*width:100%;*/
+}
+.footerContainer{
+  /*width:100vh;*/
+    height:10vh;
+   min-height: 3rem;
+    animation: footerContainerAppear 3s linear forwards;
+}
+
+/************************************************************************/
+
+
+
+#title{
+  opacity:0;
+  font-size:1rem;
+  animation:drop-reveal 1.5s 2s forwards;
+
+
+}
+
+
+
+/************  svg circle  ***********************/
+
+
+svg{
+  display:block;
+  margin:auto;
+  width:800px;
+  height:100%;
+}
+
+circle {
+  fill:white;
+  stroke: black;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+/*****footer******/
+.footerContainer{
+  opacity:0;
+}
+
+#portfolio{
+  background: $portfolioMenuitemBackground;
+  color:$porfolioMenuItemTitle;
+}
+#resume{
+  background:$resumeMenuitemBackground;
+  color:$resumeMenuItemTitle;
+}
+
+
+
+/************  dynamic ***********************/
+
+
+@while $circleId > 0 {
+  //determine radius of circle that is determined by "circleId"
+  $r: $radiusSmallest +($radiusIncrease * $circleId);
+  $dasharray:($r * 2 * 3.14)+23.6;
+  $strokeIn:$circleId/($numberOfCircles/1.5);
+  $delay:$strokeIn+1;
+  $filltime:$strokeIn - .6;
+  //create style for the circle based on above algorithms
+  #circle#{$circleId} {
+     stroke-dasharray:$dasharray;
+     stroke-dashoffset:$dasharray;
+     animation: rotate $strokeIn+s linear forwards,
+                rotateReverse+$circleId $strokeIn+s $strokeIn+s forwards;
+   }
+  @include rotateReverse($circleId,$dasharray);
+  $circleId: $circleId - 1;
+}
+
+/************key frames ***************/
+
+@keyframes bgFill{
+  to{
+    background-color:$main-blue-background;
+  }
+}
+
+
+@keyframes rotate {
+  to {
+    stroke-dashoffset: 0;
+  }
+  }
+
+  @keyframes drop-reveal{
+    100%{
+      opacity:1;
+      /*padding-top:0;
+      transform:scale(1.05),translateX(-50%);
+      */
+      font-size:4rem;
+
+    }
+  }
+
+  @keyframes footerContainerAppear{
+      0%{opacity:0}
+      20%{opacity:0}
+      60%{opacity:0}
+      75%{opacity:0}
+      100%{opacity:1}
+  }
+
+  //*** media queries ***/
+  /* Portrait */
+  @media only screen
+    and (min-device-width: 315px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      .circleContainer{
+          height:60vh;
+        }
+
+        .footerContainer{
+	         height: 15vh;
+         }
+
+    }
+
+    /* Landscape */
+@media only screen
+  and (min-device-width: 315px)
+  and (max-device-width: 825px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    .circleContainer{
+	     height:65vh;
+     }
+
+}

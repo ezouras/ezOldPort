@@ -1,0 +1,23 @@
+{
+  "name": "evelynzouras",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezouras/EvelynZouras.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezouras/EvelynZouras/issues"
+  },
+  "homepage": "https://github.com/ezouras/EvelynZouras#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
